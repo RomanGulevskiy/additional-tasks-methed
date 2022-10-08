@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+}
+
+.animation-1 {
+  width: 70%;
+  height: 45px;
+  margin: 0 auto;
+  border: 1px solid darkblue;
+}
+
+.green-line {
+  width: 0;
+  height: 100%;
+  background-color: green;
+  animation: 3s linear 1s 1 grow-green forwards;
+}
+
+.animation-2 {
+  width: 95%;
+  height: 45px;
+  margin: 50px auto 0;
+}
+
+.orange-line {
+  width: 10%;
+  height: 100%;
+  background-color: orange;
+  animation: 6s linear infinite grow-orange forwards;
+  animation-play-state: paused;
+}
+
+.orange-line:hover {
+  animation-play-state: running;
+}
+
+.animation-3 {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 50px auto 0;
+  border: 1px solid darkblue;
+}
+
+.ball {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: darkblue;
+  border-radius: 50%;
+  animation: 7s linear 1s bounce-ball forwards;
+}
+
+@keyframes grow-orange {
+  0% {
+    width: 10%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 10%;
+  }
+}
+
+@keyframes grow-green {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 90%;
+  }
+}
+
+@keyframes bounce-ball {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  40% {
+    top: calc(100% - 20px);
+    left: 30%;
+  }
+  50% {
+    top: calc(80% - 20px);
+    left: 50%;
+  }
+  70% {
+    top: calc(90% - 20px);
+    left: 70%;
+  }
+  80% {
+    top: calc(100% - 20px);
+    left: 80%;
+  }
+  90% {
+    top: calc(95% - 20px);
+    left: 90%;
+  }
+  100% {
+    top: calc(100% - 20px);
+    left: calc(100% - 20px);
+  }
+}
+
